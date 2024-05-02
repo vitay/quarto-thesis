@@ -4,7 +4,7 @@
 
 References: @Scholl2022 showed that XXX [@Vitay2017].
 
-See @fig-dopamine, @sec-admonitions and @sec-results.
+Cross-references: See @fig-dopamine, @eq-ratecoded, @lst-python, @sec-admonitions and @sec-results.
 
 ![Afferent system to VTA. [@Vitay2017]](img/dopamine.jpg){#fig-dopamine width=50%}
 
@@ -12,7 +12,7 @@ Equations:
 
 $$
     \tau \, \frac{dx_j(t)}{dt} + x_j(t)= \sum_i w^{in}_{ij} \, r^{in}_i(t) + g \, \sum_{i \neq j} w^{rec}_{ij} \, r_i(t)
-$$
+$$ {#eq-ratecoded}
 
 
 ## Second subsection {#sec-admonitions}
@@ -27,7 +27,7 @@ Important information.
 
 Code snippets:
 
-```python
+```{#lst-python .python lst-cap="Simple for loop in python"}
 for i in range(10):
     print(i)
 ```

@@ -1,4 +1,6 @@
-.quarto 
+.quarto
 site_libs
 docs
 *DS_Store*
+
+/.quarto/
