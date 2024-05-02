@@ -1,0 +1,52 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Title of the thesis",
+    "section": "",
+    "text": "Abstract\nAbstract of the thesis.",
+    "crumbs": [
+      "Abstract"
+    ]
+  },
+  {
+    "objectID": "1-Introduction.html",
+    "href": "1-Introduction.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 First subsection\nReferences: Scholl et al. (2022) showed that XXX (Vitay, 2017).\nSee Figure 1.1, Section 1.2 and Chapter 4.\nEquations:\n\\tau \\, \\frac{dx_j(t)}{dt} + x_j(t)= \\sum_i w^{in}_{ij} \\, r^{in}_i(t) + g \\, \\sum_{i \\neq j} w^{rec}_{ij} \\, r_i(t)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "1-Introduction.html#first-subsection",
+    "href": "1-Introduction.html#first-subsection",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Figure 1.1: Afferent system to VTA. (Vitay, 2017)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "1-Introduction.html#sec-admonitions",
+    "href": "1-Introduction.html#sec-admonitions",
+    "title": "1  Introduction",
+    "section": "1.2 Second subsection",
+    "text": "1.2 Second subsection\nAdmonitions:\n\n\n\n\n\n\nNota Bene\n\n\n\nImportant information.\n\n\nCode snippets:\nfor i in range(10):\n    print(i)\n\n\n\n\nScholl, C., Baladron, J., Vitay, J., and Hamker, F. H. (2022). Enhanced habit formation in Tourette patients explained by shortcut modulation in a hierarchical cortico-basal ganglia model. Brain Structure and Function. doi:10.1007/s00429-021-02446-x.\n\n\nVitay, J. (2017). On the role of dopamine in motivated behavior: A neuro-computational approach. Available at: https://julien-vitay.net/publication/vitay2017/.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "References.html",
+    "href": "References.html",
+    "title": "References",
+    "section": "",
+    "text": "Scholl, C., Baladron, J., Vitay, J., and Hamker, F. H. (2022). Enhanced\nhabit formation in Tourette patients explained by shortcut\nmodulation in a hierarchical cortico-basal ganglia model. Brain\nStructure and Function. doi:10.1007/s00429-021-02446-x.\n\n\nVitay, J. (2017). On the role of dopamine in motivated behavior: A\nneuro-computational approach. Available at: https://julien-vitay.net/publication/vitay2017/.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]
