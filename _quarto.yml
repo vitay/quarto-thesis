@@ -1,0 +1,84 @@
+project:
+  type: book
+  output-dir: ./docs
+
+book:
+  title: "Title of the thesis"
+  author:
+    - name: Dr. Julien Vitay 
+      email: julien.vitay@informatik.tu-chemnitz.de
+      url: https://julien-vitay.net
+      affiliation: Chemnitz University of Technology
+      affiliation-url: https://tu-chemnitz.de
+      orcid: 0000-0001-5229-2349
+  date: "2017"
+  date-format: "YYYY"
+  
+  chapters:
+    - index.qmd
+    - 1-Introduction.qmd
+    - 2-StateOfTheArt.qmd
+    - 3-Methods.qmd
+    - 4-Results.qmd
+    - 5-Discussion.qmd
+    - References.qmd
+
+  output-file: "thesis"
+
+  sidebar:
+    logo: img/tuc.png
+    style: "docked"
+    background: white
+
+  downloads:
+    - pdf
+
+# Bibliography
+bibliography: references.bib
+csl: assets/frontiers.csl
+number-sections: true
+highlight-style: github
+
+format:
+  html:
+    theme: ['sandstone', assets/custom.scss]
+    page-layout: full
+    smooth-scroll: true
+    html-math-method: katex
+    page-navigation: true
+
+  pdf:
+    documentclass: scrbook
+    keep-tex: true
+
+    # Table of contents
+    toc: true
+    toc-depth: 3
+    toc-title: "Table of contents"
+    lof: false
+    lot: false
+
+    # Fonts
+    mainfont: "Times New Roman"
+    sansfont: "Arial"
+    monofont: "Courier New"
+    fontsize: 11pt
+
+    # Setup
+    geometry: 
+      - margin=1in
+      - heightrounded
+    papersize: a4
+    linestretch: 1.25
+    colorlinks: true
+    linkcolor: ForestGreen
+
+    # Title page
+    template-partials:
+      - assets/before-body.tex
+    logo: img/tuc.png
+    genre: "Dr. habil"
+    department: Fakultät für Informatik an der Technischen Universität Chemnitz
+
+
+# See https://cameronpatrick.com/post/2023/07/quarto-thesis-formatting/

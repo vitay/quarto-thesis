@@ -1,0 +1,47 @@
+$if(has-frontmatter)$
+    \frontmatter
+$endif$
+
+$if(title)$
+    \cleardoublepage
+    \thispagestyle{empty}
+
+    {\centering
+
+        \begin{figure}[h!]
+            \begin{center}
+                \includegraphics[width=8cm]{$logo$}
+            \end{center}
+        \end{figure}
+        
+        \hbox{}\vskip 0cm plus 1fill
+        
+        {\Huge\bfseries $title$ \par}
+        
+        $if(subtitle)$
+            \vspace{3ex}
+            {\Huge\bfseries $subtitle$ \par}
+        $endif$
+        
+        \vspace{12ex}
+        $for(by-author)$
+            {\LARGE\bfseries $by-author.name.literal$ \par}
+        $endfor$%
+            
+        \vskip 0cm plus 1fill
+
+        {\large Dissertation zur Erlangung des akademischen Grades}
+        
+        \vspace{3ex}
+            
+        {\Large $genre$ \par}
+        
+        \vskip 0cm plus 1fill         
+            
+        {\large $department$ \par}
+        
+
+    }
+$endif$
+
+\cleardoublepage

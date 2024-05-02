@@ -1,0 +1,33 @@
+# Introduction {#sec-introduction}
+
+## First subsection
+
+References: @Scholl2022 showed that XXX [@Vitay2017].
+
+See @fig-dopamine, @sec-admonitions and @sec-results.
+
+![Afferent system to VTA. [@Vitay2017]](img/dopamine.jpg){#fig-dopamine width=50%}
+
+Equations:
+
+$$
+    \tau \, \frac{dx_j(t)}{dt} + x_j(t)= \sum_i w^{in}_{ij} \, r^{in}_i(t) + g \, \sum_{i \neq j} w^{rec}_{ij} \, r_i(t)
+$$
+
+
+## Second subsection {#sec-admonitions}
+
+Admonitions:
+
+::: {.callout-note}
+## Nota Bene
+
+Important information.
+:::
+
+Code snippets:
+
+```python
+for i in range(10):
+    print(i)
+```
