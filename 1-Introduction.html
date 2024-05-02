@@ -291,7 +291,7 @@ window.Quarto = {
 <section id="first-subsection" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="first-subsection"><span class="header-section-number">1.1</span> First subsection</h2>
 <p>References: <span class="citation" data-cites="Scholl2022">Scholl et al. (<a href="References.html#ref-Scholl2022" role="doc-biblioref">2022</a>)</span> showed that XXX <span class="citation" data-cites="Vitay2017">(<a href="References.html#ref-Vitay2017" role="doc-biblioref">Vitay, 2017</a>)</span>.</p>
-<p>See <a href="#fig-dopamine" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>, <a href="#sec-admonitions" class="quarto-xref"><span>Section 1.2</span></a> and <a href="4-Results.html" class="quarto-xref"><span>Chapter 4</span></a>.</p>
+<p>Cross-references: See <a href="#fig-dopamine" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>, <a href="#eq-ratecoded" class="quarto-xref">Equation&nbsp;<span>1.1</span></a>, <a href="#lst-python" class="quarto-xref">Listing&nbsp;<span>1.1</span></a>, <a href="#sec-admonitions" class="quarto-xref"><span>Section 1.2</span></a> and <a href="4-Results.html" class="quarto-xref"><span>Chapter 4</span></a>.</p>
 <div id="fig-dopamine" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dopamine-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -303,9 +303,9 @@ Figure&nbsp;1.1: Afferent system to VTA. <span class="citation" data-cites="Vita
 </figure>
 </div>
 <p>Equations:</p>
-<p><span class="math display">
+<p><span id="eq-ratecoded"><span class="math display">
     \tau \, \frac{dx_j(t)}{dt} + x_j(t)= \sum_i w^{in}_{ij} \, r^{in}_i(t) + g \, \sum_{i \neq j} w^{rec}_{ij} \, r_i(t)
-</span></p>
+\tag{1.1}</span></span></p>
 </section>
 <section id="sec-admonitions" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="sec-admonitions"><span class="header-section-number">1.2</span> Second subsection</h2>
@@ -324,8 +324,17 @@ Nota Bene
 </div>
 </div>
 <p>Code snippets:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="lst-python" class="python listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;1.1: Simple for loop in python
+</figcaption>
+<div aria-describedby="lst-python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="sourceCode" id="lst-python"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-python-1"><a href="#lst-python-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="lst-python-2"><a href="#lst-python-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</figure>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
