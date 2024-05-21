@@ -13,6 +13,7 @@ book:
       orcid: 0000-0001-5229-2349
   date: "2017"
   date-format: "YYYY"
+
   
   chapters:
     - index.qmd
@@ -59,9 +60,8 @@ format:
     lot: false
 
     # Fonts
-    mainfont: "Times New Roman"
-    sansfont: "Arial"
-    monofont: "Courier New"
+    mainfont: "Roboto"
+    monofont: "Inconsolata"
     fontsize: 11pt
 
     # Setup
@@ -77,8 +77,13 @@ format:
     template-partials:
       - assets/before-body.tex
     logo: img/tuc.png
+    info:
+        - Geboren am 11.12.1979 in Saint-Nazaire (Frankreich)
+    genre-text: "Dissertation zur Erlangung des akademischen Grades"
     genre: "Dr. habil"
-    department: Fakultät für Informatik an der Technischen Universität Chemnitz
+    lab: Professur für künstliche Intelligenz
+    department: Fakultät für Informatik 
+    university: Technische Universität Chemnitz
 
 
 # See https://cameronpatrick.com/post/2023/07/quarto-thesis-formatting/

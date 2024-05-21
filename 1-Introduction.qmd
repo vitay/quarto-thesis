@@ -4,7 +4,7 @@
 
 References: @Scholl2022 showed that XXX [@Vitay2017].
 
-Cross-references: See @fig-dopamine, @eq-ratecoded, @lst-python, @sec-admonitions and @sec-results.
+Cross-references: See @fig-dopamine, @eq-ratecoded, @lst-EI, @sec-admonitions and @sec-results.
 
 ![Afferent system to VTA. [@Vitay2017]](img/dopamine.jpg){#fig-dopamine width=50%}
 
@@ -27,7 +27,24 @@ Important information.
 
 Code snippets:
 
-```{#lst-python .python lst-cap="Simple for loop in python"}
-for i in range(10):
-    print(i)
+:::{#lst-EI}
+```{.python}
+import numpy as np
+import ANNarchy as ann
+
+P = ann.Population(geometry=1000, neuron=ann.Izhikevich)
+E = P[:800] ; I = P[800:]
+
+EI = ann.Projection(pre=E, post=P, target='exc')
+EI.connect_all_to_all(weights=ann.Uniform(0.0, 0.5))
+   
+IE = ann.Projection(pre=I, post=P, target='inh')
+IE.connect_all_to_all(weights=ann.Uniform(0.0, 1.0))
+
+ann.compile()
+
+ann.simulate(1000.0, measure_time=True)
 ```
+
+Simple EI network in ANNarchy. 
+:::

@@ -23,9 +23,8 @@
 \usepackage{lmodern}
 \ifPDFTeX\else  
     % xetex/luatex font selection
-  \setmainfont[]{Times New Roman}
-  \setsansfont[]{Arial}
-  \setmonofont[]{Courier New}
+  \setmainfont[]{Roboto}
+  \setmonofont[]{Inconsolata}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -238,6 +237,7 @@
 \begin{document}
     \frontmatter
 
+
     \cleardoublepage
     \thispagestyle{empty}
 
@@ -249,29 +249,40 @@
             \end{center}
         \end{figure}
         
-        \hbox{}\vskip 0cm plus 1fill
+        \vfill
+
+        {\Huge\bfseries Title of the
+thesis\\[5pt] } % Title and optional subtitle
         
-        {\Huge\bfseries Title of the thesis \par}
         
+        \vspace{1.5cm}
+
+                    {\LARGE\bfseries Dr.~Julien Vitay}\\[5pt]
+        
+        \vspace{1cm}
+
+        
+                { Geboren am 11.12.1979} \\[5pt]
+                { Saint-Nazaire (Frankreich)} \\[5pt]
+        
+                    \vspace{1cm}
+                        \textsc{Dissertation zur Erlangung des
+akademischen Grades} \\[1cm]
+                        \textsc{\Large{{Dr.~habil}}} \\[5pt] % Degree
                 
-        \vspace{12ex}
-                    {\LARGE\bfseries Dr.~Julien Vitay \par}
-        %
-            
-        \vskip 0cm plus 1fill
+        \vfill
 
-        {\large Dissertation zur Erlangung des akademischen Grades}
+                    {Professur für künstliche
+Intelligenz}\\[5pt] % Professorship
+                            {Fakultät für
+Informatik}\\[5pt] % Department
+                            {Technische Universität
+Chemnitz}\\[5pt] % Professorship
         
-        \vspace{3ex}
-            
-        {\Large Dr.~habil \par}
+        \vfill
+                    {2017} % Date of submission
         
-        \vskip 0cm plus 1fill         
-            
-        {\large Fakultät für Informatik an der Technischen Universität
-Chemnitz \par}
         
-
     }
 
 \cleardoublepage
@@ -300,8 +311,9 @@ Abstract of the thesis.
 
 References: Scholl et al. (2022) showed that XXX (Vitay, 2017).
 
-See Figure~\ref{fig-dopamine}, Section~\ref{sec-admonitions} and
-Chapter~\ref{sec-results}.
+Cross-references: See Figure~\ref{fig-dopamine},
+Equation~\ref{eq-ratecoded}, Listing~\ref{lst-EI},
+Section~\ref{sec-admonitions} and Chapter~\ref{sec-results}.
 
 \begin{figure}
 
@@ -317,15 +329,15 @@ Chapter~\ref{sec-results}.
 
 Equations:
 
-\[
+\begin{equation}\phantomsection\label{eq-ratecoded}{
     \tau \, \frac{dx_j(t)}{dt} + x_j(t)= \sum_i w^{in}_{ij} \, r^{in}_i(t) + g \, \sum_{i \neq j} w^{rec}_{ij} \, r_i(t)
-\]
+}\end{equation}
 
 \section{Second subsection}\label{sec-admonitions}
 
 Admonitions:
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, opacityback=0, breakable, left=2mm, toptitle=1mm, rightrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota Bene}, titlerule=0mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, toprule=.15mm, colback=white]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, colframe=quarto-callout-note-color-frame, opacityback=0, left=2mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, bottomtitle=1mm, titlerule=0mm, coltitle=black, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota Bene}, breakable, arc=.35mm, toptitle=1mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 Important information.
 
@@ -333,12 +345,35 @@ Important information.
 
 Code snippets:
 
+\begin{codelisting}
+
+\caption{\label{lst-EI}Simple EI network in ANNarchy.}
+
+\centering{
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{10}\NormalTok{):}
-    \BuiltInTok{print}\NormalTok{(i)}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ ANNarchy }\ImportTok{as}\NormalTok{ ann}
+
+\NormalTok{P }\OperatorTok{=}\NormalTok{ ann.Population(geometry}\OperatorTok{=}\DecValTok{1000}\NormalTok{, neuron}\OperatorTok{=}\NormalTok{ann.Izhikevich)}
+\NormalTok{E }\OperatorTok{=}\NormalTok{ P[:}\DecValTok{800}\NormalTok{] }\OperatorTok{;}\NormalTok{ I }\OperatorTok{=}\NormalTok{ P[}\DecValTok{800}\NormalTok{:]}
+
+\NormalTok{EI }\OperatorTok{=}\NormalTok{ ann.Projection(pre}\OperatorTok{=}\NormalTok{E, post}\OperatorTok{=}\NormalTok{P, target}\OperatorTok{=}\StringTok{\textquotesingle{}exc\textquotesingle{}}\NormalTok{)}
+\NormalTok{EI.connect\_all\_to\_all(weights}\OperatorTok{=}\NormalTok{ann.Uniform(}\FloatTok{0.0}\NormalTok{, }\FloatTok{0.5}\NormalTok{))}
+   
+\NormalTok{IE }\OperatorTok{=}\NormalTok{ ann.Projection(pre}\OperatorTok{=}\NormalTok{I, post}\OperatorTok{=}\NormalTok{P, target}\OperatorTok{=}\StringTok{\textquotesingle{}inh\textquotesingle{}}\NormalTok{)}
+\NormalTok{IE.connect\_all\_to\_all(weights}\OperatorTok{=}\NormalTok{ann.Uniform(}\FloatTok{0.0}\NormalTok{, }\FloatTok{1.0}\NormalTok{))}
+
+\NormalTok{ann.}\BuiltInTok{compile}\NormalTok{()}
+
+\NormalTok{ann.simulate(}\FloatTok{1000.0}\NormalTok{, measure\_time}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+}
+
+\end{codelisting}%
 
 \bookmarksetup{startatroot}
 
